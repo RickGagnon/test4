@@ -1,0 +1,11 @@
+<div class="card mt-4">
+    <h4 class="card-header">Atess Team</h4>
+    <div class="card-body" *ngIf="currentUser">
+        <!--<p>You're logged in with Angular 8.1 & JWT!!</p>-->
+        <p>Welcome {{currentUser.firstName}} you are logged in as <strong>{{currentUser.role}}</strong>.</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <!--<ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>-->
+    </div>
+</div>

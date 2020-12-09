@@ -1,0 +1,46 @@
+<!--<div class="card mt-4">
+  <h4 class="card-header">URL Link Converter</h4>
+  <div class="card-body">
+    <p>Remove the encrypted data from your DWAN URL  .</p>
+
+    <br />
+    <h3>Comming Soon.</h3>
+        <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+    </ul>
+  </div>
+</div>-->
+
+
+  <div class="matcard">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>URL Link Converter</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="urlConvertForm">
+          <mat-form-field appearance="fill" style="width:50vw">
+            <mat-label>Enter or Paste the DWAN Link</mat-label>
+            <input matInput #mainlink id="mainlink" type="text" formControlName="urlLink" />
+          </mat-form-field>
+          &nbsp;
+          <button mat-raised-button color="primary" (click)="clearValue()">Clear</button>
+          <br />
+          <mat-form-field appearance="fill" style="width:50vw">
+            <mat-label>Result</mat-label>
+            <input matInput type="text" id="result" #resultinput formControlName="resultUrl" />
+
+          </mat-form-field>&nbsp;
+          <button mat-raised-button color="accent" (click)="open()">Open</button>
+          <!--<button mat-raised-button color="primary" (click)="copy(resultinput)">Copy</button>&nbsp;-->
+        </form>
+      </mat-card-content>
+      <!--<mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Login</button>
+        <button mat-raised-button color="warn">Cancel</button>
+      </mat-card-actions>-->
+    </mat-card>
+
+
+
+  </div>

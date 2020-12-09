@@ -1,0 +1,72 @@
+<!--<body>
+  <app-nav-menu></app-nav-menu>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</body>-->
+<!-- nav -->
+  <mat-toolbar color="primary" *ngIf="currentUser" class="expanded-toolbar">
+    <span>
+      <button mat-button routerLink="/">{{title}}</button>
+    </span>
+    <!--<button mat-button routerLink="/"><mat-icon>home</mat-icon></button>-->
+    <span class="example-fill-remaining-space"></span>
+    <span>
+      <button mat-button [routerLink]="['/home']"><mat-icon style="color:goldenrod">home</mat-icon></button>
+    </span>
+    <span *ngIf="isAdmin">
+      <button mat-button [matMenuTriggerFor]="adminMenu"><mat-icon style="color:darkorange">view_module</mat-icon>Projects</button>
+    </span>
+    <span *ngIf="isAdmin">
+      <button mat-button [matMenuTriggerFor]="adminMenu"><mat-icon style="color:darkorange">view_module</mat-icon>Admin</button>
+    </span>
+    <mat-menu #adminMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/userlist']"><mat-icon style="color:darkkhaki"><span></span>list</mat-icon>List of Members</button>
+    </mat-menu>
+    <span>
+      <button mat-button [matMenuTriggerFor]="toolsMenu"><mat-icon style="color:darkorange">view_module</mat-icon>Apps</button>
+    </span>
+    <mat-menu #toolsMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/link-convert']"><mat-icon style="color:deepskyblue"><span></span>settings_ethernet</mat-icon>(DWAN)Link Converter</button>
+    </mat-menu>
+    <span>
+      <button mat-button [matMenuTriggerFor]="appSettingsMenu"><mat-icon style="color:greenyellow">settings_power</mat-icon></button>
+    </span>
+    <mat-menu #appSettingsMenu="matMenu">
+      <button mat-menu-item (click)="logout()"><mat-icon style="color:red">power_settings_new</mat-icon>Logout</button>
+      <button mat-menu-item><mat-icon style="color:blueviolet">account_circle</mat-icon>Profile</button>
+    </mat-menu>
+
+    <!--<button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>-->
+  </mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!--<mat-toolbar color="primary" *ngIf="currentUser">Atess Software Application</mat-toolbar>-->
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Messages</a>
+    <a class="nav-item nav-link" routerLink="/userlist" *ngIf="isAdmin">Users List</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>-->
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+  <p>
+    <a href="#" target="_top">Atess Support Software Development</a>
+  </p>
+  <p>
+    <a href="#" target="_top">@TeamAtess</a>
+  </p>
+</div>
